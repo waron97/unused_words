@@ -7,6 +7,8 @@ import { getMongoUrl } from "./services/mongo";
 
 const app = express();
 
+app.get("/", (req, res, next) => res.send("hello"));
+
 app.use("/words", WordsRouter);
 app.use("/telegram", TelegramRouter);
 
