@@ -10,7 +10,7 @@ app.use("/words", WordsRouter);
 app.use("/telegram", TelegramRouter);
 
 mongoose.connect(
-  "mongodb://mongoadmin:secret@localhost:27888/?authSource=admin"
+  "mongodb://mongoadmin:secret@localhost:27888/words?authSource=admin"
 );
 
 export default app;

@@ -5,6 +5,7 @@ interface Word {
   date: Date;
   method: "page" | "telegram";
   addedBy?: string;
+  definition?: string;
 }
 
 const WordsSchema = new Schema<Word>({
@@ -23,6 +24,9 @@ const WordsSchema = new Schema<Word>({
     enum: ["page", "telegram"],
   },
   addedBy: {
+    type: String,
+  },
+  definition: {
     type: String,
   },
 });
