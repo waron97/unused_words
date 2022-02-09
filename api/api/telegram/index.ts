@@ -4,6 +4,6 @@ import { handleUpdates } from "./model";
 
 const router = Router();
 
-router.get("updates", handleUpdates);
+router.post("updates", handleUpdates);
 
 export default router;
