@@ -4,8 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "postinstall": "tsc",
+    "start": "node dist/index.js",
     "build": "tsc",
-    "start": "tsc && node build/index.js"
+    "watch-node": "nodemon dist/index.js",
+    "watch-ts": "tsc -w"
+  },
+  "engines": {
+    "node": "16.0.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
