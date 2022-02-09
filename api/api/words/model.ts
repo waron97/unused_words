@@ -12,6 +12,7 @@ const WordsSchema = new Schema<Word>({
   word: {
     type: String,
     required: true,
+    unique: true,
   },
   date: {
     type: Date,
@@ -21,7 +22,7 @@ const WordsSchema = new Schema<Word>({
   method: {
     type: String,
     required: true,
-    enum: ["page", "telegram"],
+    enum: ["web", "telegram"],
   },
   addedBy: {
     type: String,

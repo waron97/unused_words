@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { handleUpdates } from "./model";
+import { handleUpdates } from "./controller";
 
 const router = Router();
 
