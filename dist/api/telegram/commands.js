@@ -99,7 +99,7 @@ const getHelp = () => __awaiter(void 0, void 0, void 0, function* () {
 exports.getHelp = getHelp;
 const getSummary = (text) => __awaiter(void 0, void 0, void 0, function* () {
     const allWords = yield model_1.default.find();
-    const pageStr = text[1];
+    const pageStr = text[0];
     console.log("text", text);
     let page = pageStr ? parseInt(pageStr) : 1;
     page = !isNaN(page) && page > 0 ? page : 1;

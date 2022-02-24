@@ -84,7 +84,7 @@ export const getHelp: Command = async () =>
 
 export const getSummary: Command = async (text) => {
   const allWords = await WordModel.find();
-  const pageStr = text[1];
+  const pageStr = text[0];
   console.log("text", text);
   let page = pageStr ? parseInt(pageStr) : 1;
   page = !isNaN(page) && page > 0 ? page : 1;
