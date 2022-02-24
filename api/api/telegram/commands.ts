@@ -85,6 +85,7 @@ export const getHelp: Command = async () =>
 export const getSummary: Command = async (text) => {
   const allWords = await WordModel.find();
   const pageStr = text[1];
+  console.log("text", text);
   let page = pageStr ? parseInt(pageStr) : 1;
   page = !isNaN(page) && page > 0 ? page : 1;
   page = page - 1;
@@ -97,7 +98,7 @@ export const getSummary: Command = async (text) => {
   return `
 Ci sono ${total} parole aggiunte.
 
-Pagina ${page + 1} di ${maxPages + 1}:
+Pagina ${page + 1} di ${maxPages}:
 ${toReturn.map((entry) => entry.word).join("\n")}
   `;
 };
