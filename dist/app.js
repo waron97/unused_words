@@ -1,0 +1,20 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const body_parser_1 = __importDefault(require("body-parser"));
+const express_1 = __importDefault(require("express"));
+const mongoose_1 = __importDefault(require("mongoose"));
+const telegram_1 = __importDefault(require("./api/telegram"));
+const words_1 = __importDefault(require("./api/words"));
+const mongo_1 = require("./services/mongo");
+const app = (0, express_1.default)();
+const mongoUrl = (0, mongo_1.getMongoUrl)();
+console.log("mongoUrl", mongoUrl);
+mongoose_1.default.connect((0, mongo_1.getMongoUrl)());
+app.use(body_parser_1.default.json());
+app.get("/", (req, res, next) => res.send("hello"));
+app.use("/words", words_1.default);
+app.use("/telegram", telegram_1.default);
+exports.default = app;
