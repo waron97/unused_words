@@ -14,6 +14,7 @@ const WordsSchema = new Schema<Word>({
     type: String,
     required: true,
     unique: true,
+    trim: true,
   },
   date: {
     type: Date,
