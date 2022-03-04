@@ -6,6 +6,7 @@ interface Word {
   method: "page" | "telegram";
   addedBy?: string;
   definition?: string;
+  examples: string[];
 }
 
 const WordsSchema = new Schema<Word>({
@@ -29,6 +30,10 @@ const WordsSchema = new Schema<Word>({
   },
   definition: {
     type: String,
+  },
+  examples: {
+    type: [String],
+    default: [],
   },
 });
 
