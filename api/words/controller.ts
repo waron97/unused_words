@@ -46,3 +46,8 @@ export const update: RequestHandler = async (req, res, next) => {
     next(e);
   }
 };
+
+export const destroy: RequestHandler = (req, res, next) =>
+  WordModel.findByIdAndDelete(req.params.id)
+    .then(() => res.status(204).send())
+    .catch(next);
