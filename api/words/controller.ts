@@ -30,6 +30,7 @@ export const create: RequestHandler = async (req, res, next) => {
 
 export const getAll: RequestHandler = (req, res, next) => {
   WordModel.find({})
+    .sort({ date: "-1" })
     .then((words) => res.json(words))
     .catch(next);
 };
