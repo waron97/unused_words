@@ -10,6 +10,6 @@ router.get("/random", getRandomWord);
 
 router.post("/", create);
 
-router.put("/", update);
+router.put("/:id", update);
 
 export default router;

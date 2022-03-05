@@ -38,7 +38,9 @@ export const update: RequestHandler = async (req, res, next) => {
   try {
     const { params, body } = req;
     const { id } = params;
-    const updated = WordModel.findByIdAndUpdate(id, body);
+    console.log("id", id);
+    console.log("body", body);
+    const updated = await WordModel.findByIdAndUpdate(id, body);
     res.json(updated);
   } catch (e) {
     next(e);
