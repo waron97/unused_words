@@ -28,6 +28,12 @@ export const create: RequestHandler = async (req, res, next) => {
   }
 };
 
+export const getAll: RequestHandler = (req, res, next) => {
+  WordModel.find({})
+    .then((words) => res.json(words))
+    .catch(next);
+};
+
 export const update: RequestHandler = async (req, res, next) => {
   try {
     const { params, body } = req;

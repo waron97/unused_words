@@ -1,8 +1,10 @@
 import { Router } from "express";
 
-import { create, getRandomWord, update } from "./controller";
+import { create, getAll, getRandomWord, update } from "./controller";
 
 const router = Router();
+
+router.get("/", getAll);
 
 router.get("/random", getRandomWord);
 
